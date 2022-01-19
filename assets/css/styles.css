@@ -1,0 +1,191 @@
+@import url(https://fonts.googleapis.com/css?family=Muli:400,700,800,900&display=swap);
+:root {
+    --primary: #fcda97;
+    --secondary: #639773;
+}
+/*
+  green's  -- #a4c889 -- #8bb48b
+  gold -- #e1c180 -- #f4cd9e -- #fcda97
+
+html {
+    scroll-behavior: smooth;
+    position: relative;
+    min-height: 100%;
+}
+  
+body {
+    font-family: "Amiko", sans-serif;
+}*/
+  
+
+body, html {
+    max-height: 100%;
+    margin: 0;
+    font-family: Muli,sans-serif;
+}
+
+a{ color: inherit;}
+a:hover{ color: inherit;}
+
+h1 {
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* ------------------------------------------------*/
+/* --------- Parts Division (left/right) --------- */
+/* ------------------------------------------------*/
+
+.left__part { /* Details/Porfile part */
+    width: 100%;
+    min-height: 100vh;
+    float: right;
+    position: relative;
+    background-color: #fff;
+    padding-right: 250px;    
+}
+
+.right__part {  /* Menu part */
+    width: 250px;
+    height: 100vh;
+    right: 0px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    padding: 0 40px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+/* ------------------------------------------------*/
+/* ----------------- Profile IMG ----------------- */
+/* ------------------------------------------------*/
+.profile {
+    width: 300px;
+    height: 300px;
+}
+.profile img{
+    width: 300px;
+    border-radius: 60%;
+}
+  
+.profile-mask {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-100 -100 200 200' preserveAspectRatio='none'%3E%3Cpath d='M56.4,-46.7C68,-30.3,69,-7.2,63.4,13.3C57.8,33.7,45.5,51.4,29,58.6C12.6,65.9,-8.1,62.8,-26.6,54.3C-45.1,45.7,-61.5,31.8,-66.4,14.1C-71.3,-3.6,-64.8,-25,-51.8,-41.7C-38.8,-58.4,-19.4,-70.4,1.5,-71.5C22.3,-72.7,44.7,-63.1,56.4,-46.7Z'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-100 -100 200 200' preserveAspectRatio='none'%3E%3Cpath d='M56.4,-46.7C68,-30.3,69,-7.2,63.4,13.3C57.8,33.7,45.5,51.4,29,58.6C12.6,65.9,-8.1,62.8,-26.6,54.3C-45.1,45.7,-61.5,31.8,-66.4,14.1C-71.3,-3.6,-64.8,-25,-51.8,-41.7C-38.8,-58.4,-19.4,-70.4,1.5,-71.5C22.3,-72.7,44.7,-63.1,56.4,-46.7Z'/%3E%3C/svg%3E");
+    mask-repeat: no-repeat;
+}
+
+.profile-mask { 
+    animation: clip-rotate 25s linear infinite; /* --- animation for the mask --- */
+}
+.profile img{
+    animation: clip-rotate2 25s linear infinite, fadein 4s; /* --- animation for the img --- */
+}
+  
+/* ----------------------------------------------------*/
+/* ----------------- Profile Details ----------------- */
+/* ----------------------------------------------------*/
+.left_content, .profile_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.left_content {
+    text-align: center;
+    min-height: 100vh;
+}
+.profile_content {
+    text-align: left;
+    padding-right: 50px;
+}
+.profile_details {
+    max-width: 500px;
+    margin-left: 15px;
+}
+.profile_details h5{
+    line-height: 1.5;
+}
+
+/* ----------- Details -- Social Icons ----------- */
+.icon_social {
+    display: flex;
+    justify-content: start;
+}
+.icon_social .bx {
+    border-radius: 8px;
+    padding: 7px;
+    background-color: var(--primary);
+    margin: 10px;
+    cursor: pointer;
+}
+.icon_social .bx:nth-child(1) {
+    margin-left: 0;
+}
+.icon_social .bx:nth-child(5) {
+    margin-right: 0;
+}
+
+/* ----------------------------------------------------*/
+/* ------------------- Menu Itens -------------------- */
+/* ----------------------------------------------------*/
+.right_content {
+    text-align: right;
+    width: 100%;
+    float: left;
+}
+.right_content .menu_itens ul {
+    margin: 0;
+    list-style-type: none;
+    padding: 0;    
+}
+.right_content .menu_itens ul li a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+.right_content .menu_itens li {
+    padding: 14px  24px;
+    border-radius: 10px;
+    margin: 12px 0;    
+}
+.right_content .menu_itens span {
+    margin-right: 20px;   
+}
+
+.active {
+    background-color: var(--primary);
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------------------------------- */
+/* ----- Keyframes for the profile mask animation ----- */
+/* ---------------------------------------------------- */
+@keyframes clip-rotate {
+    to { transform: rotate(360deg); }
+}  
+@keyframes clip-rotate2 {
+    to { transform: rotate(-360deg); }
+}  
+@keyframes fadein {
+   0% {  opacity: 0; } 
+   100% {  opacity: 1; }
+}
+/* ---------------------------------------------------- */
+  
+  
+  
+  
+  
+  
+  
