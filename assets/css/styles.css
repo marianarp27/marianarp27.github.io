@@ -1,25 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Muli:400,700,800,900&display=swap);
+
 :root {
     --primary: #fcda97;
-    --secondary: #639773;
 }
-/*
-  green's  -- #a4c889 -- #8bb48b
-  gold -- #e1c180 -- #f4cd9e -- #fcda97
-
-html {
-    scroll-behavior: smooth;
-    position: relative;
-    min-height: 100%;
-}
-  
-body {
-    font-family: "Amiko", sans-serif;
-}*/
-  
 
 body, html {
     max-height: 100%;
+    min-width: 400px;
+    scroll-behavior: smooth;
     margin: 0;
     font-family: Muli,sans-serif;
 }
@@ -114,22 +102,35 @@ h1 {
 .icon_social .bx {
     border-radius: 8px;
     padding: 7px;
-    background-color: var(--primary);
+    background-color: white;
     margin: 10px;
     cursor: pointer;
+
+    box-shadow:0px 0px 10px 30px var(--primary) inset;
+    transition: all .3s cubic-bezier(.79,.14,.15,.86);
 }
-.icon_social .bx:nth-child(1) {
+/* hover effect on social icons */
+.icon_social .bx:hover {
+    box-shadow: 0px 0px 0px 3px var(--primary) inset;
+    transform: scale(1.1); 
+}
+
+.icon_social a:nth-child(1) > .bx {
     margin-left: 0;
 }
-.icon_social .bx:nth-child(5) {
+.icon_social a:nth-child(5) > .bx {
     margin-right: 0;
 }
+
+
+
+
 
 /* ----------------------------------------------------*/
 /* ------------------- Menu Itens -------------------- */
 /* ----------------------------------------------------*/
 .right_content {
-    text-align: right;
+    /* text-align: right; */
     width: 100%;
     float: left;
 }
@@ -148,14 +149,37 @@ h1 {
     padding: 14px  24px;
     border-radius: 10px;
     margin: 12px 0;    
+    cursor: pointer;
+    /* for hover effect */
+    background-color: var(--primary);
+    box-shadow:0px 0px 5px 30px white inset;
+    transition: all .3s cubic-bezier(.79,.14,.15,.86); 
 }
+/* hover effect on menu  */
+.right_content .menu_itens li:hover {  
+    border-radius: 8px;
+    box-shadow: 0px 0px 0px 0px white inset;    
+    font-weight: 700;
+}
+
 .right_content .menu_itens span {
     margin-right: 20px;   
 }
 
 .active {
-    background-color: var(--primary);
+    border-radius: 8px !important;
+    box-shadow: 0px 0px 0px 0px white inset !important; 
     font-weight: 700;
+}
+
+.logo {
+    height: auto;
+}
+.logo img {
+    width: 120px;
+    margin: 20px 25px;
+    position: absolute;
+    top: 5%;
 }
 
 
@@ -185,7 +209,45 @@ h1 {
   
   
   
-  
-  
+@media only screen and (max-width: 1000px) {
+
+    .left__part {
+        padding-right: 0;
+        float: none;
+    }
+    
+    .right__part {
+        width: 100%;
+        height: auto;
+    }
+    .right_content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .right_content .menu_itens li {
+        float: right;
+        padding: 10px 12px;
+        margin: 12px 10px;
+        display: flex;
+        flex-direction: row;
+    }
+    .right_content .menu_itens li:nth-child(1) {
+        margin-right: 0;
+    }
+    .right_content .menu_itens li span{
+        display: none;
+    }
+
+    .logo img {
+        margin: 20px auto;
+    }
+
+    
+}
+
+
+
+
   
   
