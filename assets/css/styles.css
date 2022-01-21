@@ -223,6 +223,9 @@ h1 {
     .icon_social {
         flex-wrap: wrap;
     }
+    .left__part {
+        position: absolute;
+    }
 }
 
 @media only screen and (max-width: 695px) {
@@ -232,11 +235,18 @@ h1 {
         padding-right: 0;
     }
     .profile_details {
-        margin: 25px;
-      }
+        margin: 0px 25px;
+    }
     .icon_social {
         justify-content: center;
     }
+    .icon_social a:nth-child(1) > .bx {
+        margin-left: 10px;
+    }
+    .icon_social a:nth-child(5) > .bx {
+        margin-right: 10px;
+    }
+    
 }
   
 @media only screen and (max-width: 1000px) {
@@ -250,6 +260,7 @@ h1 {
     .right__part {
         width: 100%;
         height: auto;
+        background-color: white;
     }
     .right_content {
         display: flex;
@@ -262,7 +273,6 @@ h1 {
         margin: 12px 10px;
         display: flex;
         flex-direction: row;
-        background-color: white;
     }
     .right_content .menu_itens li:nth-child(1) {
         margin-right: 0;
