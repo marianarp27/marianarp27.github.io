@@ -205,6 +205,11 @@ h1 {
    0% {  opacity: 0; } 
    100% {  opacity: 1; }
 }
+
+
+
+/* ---------------------------------------------------- */
+/* ----------------- Media Query ---------------------- */
 /* ---------------------------------------------------- */
   
 @media only screen and (max-width: 570px) {
@@ -214,6 +219,9 @@ h1 {
     }
     .right_content .menu_itens li {
         margin: 10px 5px;
+    }
+    .icon_social {
+        flex-wrap: wrap;
     }
 }
 
@@ -254,6 +262,7 @@ h1 {
         margin: 12px 10px;
         display: flex;
         flex-direction: row;
+        background-color: white;
     }
     .right_content .menu_itens li:nth-child(1) {
         margin-right: 0;
