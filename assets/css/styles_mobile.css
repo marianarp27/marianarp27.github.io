@@ -52,6 +52,7 @@ body, html {
 
 
 /* --- window is 600px or smaller --- */
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 570px) {
+    
     
 }

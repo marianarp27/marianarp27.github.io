@@ -207,13 +207,36 @@ h1 {
 }
 /* ---------------------------------------------------- */
   
-  
+@media only screen and (max-width: 570px) {
+    .right__part {
+        padding: 0 20px;
+        
+    }
+    .right_content .menu_itens li {
+        margin: 10px 5px;
+    }
+}
+
+@media only screen and (max-width: 695px) {
+    .profile_content {
+        text-align: center;
+        flex-direction: column;
+        padding-right: 0;
+    }
+    .profile_details {
+        margin: 25px;
+      }
+    .icon_social {
+        justify-content: center;
+    }
+}
   
 @media only screen and (max-width: 1000px) {
 
     .left__part {
         padding-right: 0;
         float: none;
+        overflow: hidden;
     }
     
     .right__part {
