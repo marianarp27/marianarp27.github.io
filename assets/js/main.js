@@ -5,8 +5,14 @@ $(document).ready(function () {
         $( ".menu_itens li" ).click(function() {
             $( ".menu_itens li" ).not($( this )).removeClass( "active" );
             $( this ).toggleClass( "active" );
+
+            $(".menu_itens li:not(.active)").each(function(){
+                //console.log('id: ' + this.id);
+                $("i.bxs-" + this.id).addClass("bx-" + this.id).removeClass("bxs-" + this.id);
+            });
         });
     });
+    
 
     // animation hover effect - add/remove
     $( ".menu_itens li" ).on({
