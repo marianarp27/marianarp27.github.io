@@ -3,16 +3,18 @@ $(document).ready(function () {
     // active class on Menu
     $(function() {
         $( ".menu_itens li" ).click(function() {
-            $( ".menu_itens li" ).not($( this )).removeClass( "active" );
-            $( this ).toggleClass( "active" );
+            if ($(this).hasClass("active") != true) {
+                $( ".menu_itens li" ).not($( this )).removeClass( "active" );
+                $( this ).toggleClass( "active" );
 
-            $(".menu_itens li:not(.active)").each(function(){
-                //console.log('id: ' + this.id);
-                $("i.bxs-" + this.id).addClass("bx-" + this.id).removeClass("bxs-" + this.id);
-            });
+                $(".menu_itens li:not(.active)").each(function(){
+                    //console.log('id: ' + this.id);
+                    $("i.bxs-" + this.id).addClass("bx-" + this.id).removeClass("bxs-" + this.id);
+                });
+            }
         });
 
-        
+
         // Info - under construction page ---- btn_close_modal
         $( ".modal #btn_close_modal" ).click(function() {
             console.log(" clicou no user/folio");
