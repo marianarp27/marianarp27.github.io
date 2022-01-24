@@ -11,6 +11,21 @@ $(document).ready(function () {
                 $("i.bxs-" + this.id).addClass("bx-" + this.id).removeClass("bxs-" + this.id);
             });
         });
+
+        
+        // Info - under construction page ---- btn_close_modal
+        $( ".modal #btn_close_modal" ).click(function() {
+            console.log(" clicou no user/folio");
+            $(".menu_itens li" ).removeClass( "active");
+            $(".menu_itens li:not(.active)").each(function(){
+                $("i.bxs-" + this.id).addClass("bx-" + this.id).removeClass("bxs-" + this.id);
+            });
+
+            $("#home" ).addClass( "active");
+            $("i.bx-home").addClass("bxs-home").removeClass("bx-home");
+
+        }); 
+  
     });
     
 
@@ -29,6 +44,10 @@ $(document).ready(function () {
             }
         }
     });
+
+
+
+    
 
 
  
