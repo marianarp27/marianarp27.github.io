@@ -1,318 +1,104 @@
-@import url(https://fonts.googleapis.com/css?family=Muli:400,700,800,900&display=swap);
+/*
+run on terminal to complie css -->   npm run compile:sass
 
-:root {
-    --primary: #fcda97;
+https://www.freecodecamp.org/news/how-to-use-sass-with-css/
+
+
+
+*/
+/* file import */
+body {
+  font-family: "Noto Sans", Helvertica, sans-serif; /* variable usage */
+  background-color: #B8A8D2;
 }
 
-body, html {
-    max-height: 100%;
-    min-width: 400px;
-    scroll-behavior: smooth;
-    margin: 0;
-    font-family: Muli,sans-serif;
+.main_cards {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* using the mixins function */
+}
+@media (max-width: 950px) {
+  .main_cards {
+    flex-direction: column;
+  }
 }
 
-a{ color: inherit;}
-a:hover{ color: inherit;}
-
-h1 {
-    font-weight: 700;
-    margin-bottom: 25px;
+.mini_card {
+  align-items: center;
+  height: fit-content;
+  width: 350px;
+  padding: 2rem;
+}
+.mini_card h2 {
+  font-weight: 800;
+}
+.mini_card p {
+  background-color: #F0ECF5;
+  width: fit-content;
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.5rem;
+}
+@media (max-width: 950px) {
+  .mini_card {
+    width: 50%;
+  }
+}
+@media (max-width: 780px) {
+  .mini_card {
+    width: 70%;
+  }
+}
+@media (max-width: 480px) {
+  .mini_card {
+    width: 90%;
+  }
 }
 
-/* ------------------------------------------------*/
-/* --------- Parts Division (left/right) --------- */
-/* ------------------------------------------------*/
-
-.left__part { /* Details/Porfile part */
-    width: 100%;
-    min-height: 100vh;
-    float: right;
-    position: relative;
-    background-color: #fff;
-    padding-right: 250px;    
+.big_card {
+  display: none;
+  height: 300px;
+  width: 450px;
+  padding: 2rem;
+}
+@media (max-width: 950px) {
+  .big_card {
+    width: 50%;
+  }
+}
+@media (max-width: 780px) {
+  .big_card {
+    width: 70%;
+  }
+}
+@media (max-width: 480px) {
+  .big_card {
+    width: 90%;
+  }
 }
 
-.right__part {  /* Menu part */
-    width: 250px;
-    height: 100vh;
-    right: 0px;
-    position: fixed;
-    display: flex;
-    align-items: center;
-    z-index: 10;
-    padding: 0 40px;
-    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+.card_img {
+  width: 9rem;
+  border-radius: 50%;
 }
 
-/* ------------------------------------------------*/
-/* ----------------- Profile IMG ----------------- */
-/* ------------------------------------------------*/
-.profile {
-    width: 300px;
-    height: 300px;
-}
-.profile img{
-    width: 300px;
-    border-radius: 60%;
-}
-  
-.profile-mask {
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-100 -100 200 200' preserveAspectRatio='none'%3E%3Cpath d='M56.4,-46.7C68,-30.3,69,-7.2,63.4,13.3C57.8,33.7,45.5,51.4,29,58.6C12.6,65.9,-8.1,62.8,-26.6,54.3C-45.1,45.7,-61.5,31.8,-66.4,14.1C-71.3,-3.6,-64.8,-25,-51.8,-41.7C-38.8,-58.4,-19.4,-70.4,1.5,-71.5C22.3,-72.7,44.7,-63.1,56.4,-46.7Z'/%3E%3C/svg%3E");
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-100 -100 200 200' preserveAspectRatio='none'%3E%3Cpath d='M56.4,-46.7C68,-30.3,69,-7.2,63.4,13.3C57.8,33.7,45.5,51.4,29,58.6C12.6,65.9,-8.1,62.8,-26.6,54.3C-45.1,45.7,-61.5,31.8,-66.4,14.1C-71.3,-3.6,-64.8,-25,-51.8,-41.7C-38.8,-58.4,-19.4,-70.4,1.5,-71.5C22.3,-72.7,44.7,-63.1,56.4,-46.7Z'/%3E%3C/svg%3E");
-    mask-repeat: no-repeat;
+/* ----- Social Icons ----- */
+.icon_socials .bx {
+  border-radius: 8px;
+  padding: 7px;
+  background-color: white;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 30px #B8A8D2 inset;
+  transition: all 0.3s cubic-bezier(0.79, 0.14, 0.15, 0.86);
 }
 
-.profile-mask { 
-    animation: clip-rotate 25s linear infinite; /* --- animation for the mask --- */
-}
-.profile img{
-    animation: clip-rotate2 25s linear infinite, fadein 4s; /* --- animation for the img --- */
-}
-  
-/* ----------------------------------------------------*/
-/* ----------------- Profile Details ----------------- */
-/* ----------------------------------------------------*/
-.left_content, .profile_content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.left_content {
-    text-align: center;
-    min-height: 100vh;
-}
-.profile_content {
-    text-align: left;
-    padding-right: 50px;
-}
-.profile_details {
-    max-width: 500px;
-    margin-left: 15px;
-}
-.profile_details h5{
-    line-height: 1.5;
+.icon_socials .bx:hover {
+  color: #B8A8D2;
+  box-shadow: 0px 0px 0px 2px #B8A8D2 inset;
+  transform: scale(0.9);
 }
 
-/* ----------- Details -- Social Icons ----------- */
-.icon_social {
-    display: flex;
-    justify-content: start;
-}
-.icon_social .bx {
-    border-radius: 8px;
-    padding: 7px;
-    background-color: white;
-    margin: 10px;
-    cursor: pointer;
-
-    box-shadow:0px 0px 10px 30px var(--primary) inset;
-    transition: all .3s cubic-bezier(.79,.14,.15,.86);
-}
-/* hover effect on social icons */
-.icon_social .bx:hover {
-    box-shadow: 0px 0px 0px 3px var(--primary) inset;
-    transform: scale(1.1); 
-}
-
-.icon_social a:nth-child(1) > .bx {
-    margin-left: 0;
-}
-.icon_social a:nth-child(5) > .bx {
-    margin-right: 0;
-}
-
-
-
-
-
-/* ----------------------------------------------------*/
-/* ------------------- Menu Itens -------------------- */
-/* ----------------------------------------------------*/
-.right_content {
-    /* text-align: right; */
-    width: 100%;
-    float: left;
-}
-.right_content .menu_itens ul {
-    margin: 0;
-    list-style-type: none;
-    padding: 0;    
-}
-.right_content .menu_itens ul a{
-    text-decoration: none;
-}
-.right_content .menu_itens li {
-    padding: 14px  24px;
-    width: 100%;
-    border-radius: 10px;
-    margin: 15px 0;  
-    /* for hover effect */
-    background-color: var(--primary);
-    box-shadow:0px 0px 5px 30px white inset;
-    transition: all .3s cubic-bezier(.79,.14,.15,.86); 
-
-    display: flex;
-    align-items: center;
-    justify-content: right;
-}
-/* hover effect on menu  */
-.right_content .menu_itens li:hover {  
-    border-radius: 8px;
-    box-shadow: 0px 0px 0px 0px white inset;    
-    font-weight: 700;
-}
-
-.right_content .menu_itens span {
-    margin-right: 20px;   
-}
-
-.active {
-    border-radius: 8px !important;
-    box-shadow: 0px 0px 0px 0px white inset !important; 
-    font-weight: 700;
-}
-
-.logo {
-    height: auto;
-}
-.logo img {
-    width: 120px;
-    margin: 20px 25px;
-    position: absolute;
-    top: 5%;
-}
-
-
-/* ----------------------------------------------------*/
-/* ---------- Modal - Under Construction ------------- */
-.modal-social {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.modal-social a {
-    display: flex;
-    text-decoration: none;
-    margin: 8px;
-}
-.modal-social a:hover {
-    color: slategray;
-}
-
-
-
-
-
-
-
-
-
-/* ---------------------------------------------------- */
-/* ----- Keyframes for the profile mask animation ----- */
-/* ---------------------------------------------------- */
-@keyframes clip-rotate {
-    to { transform: rotate(360deg); }
-}  
-@keyframes clip-rotate2 {
-    to { transform: rotate(-360deg); }
-}  
-@keyframes fadein {
-   0% {  opacity: 0; } 
-   100% {  opacity: 1; }
-}
-
-
-
-/* ---------------------------------------------------- */
-/* ----------------- Media Query ---------------------- */
-/* ---------------------------------------------------- */
-  
-@media only screen and (max-width: 570px) {
-    .right__part {
-        padding: 0 20px;        
-    }
-    .right_content .menu_itens li {
-        margin: 10px 5px;
-    }
-    .icon_social {
-        flex-wrap: wrap;
-    }
-    .icon_social .bx {
-        margin: 7px;
-    }
-    .left__part {
-        position: absolute;
-    }
-}
-
-@media only screen and (max-width: 695px) {
-    .profile_content {
-        text-align: center;
-        flex-direction: column;
-        padding-right: 0;
-    }
-    .profile_details {
-        margin: 0px 25px;
-    }
-    .icon_social {
-        justify-content: center;
-    }
-    .icon_social a:nth-child(1) > .bx {
-        margin-left: 10px;
-    }
-    .icon_social a:nth-child(5) > .bx {
-        margin-right: 10px;
-    }
-    
-}
-  
-@media only screen and (max-width: 1000px) {
-
-    .left__part {
-        padding-right: 0;
-        float: none;
-        overflow: hidden;        
-    }
-    
-    .right__part {
-        width: 100%;
-        height: auto;
-        background-color: white;
-        z-index: 10;
-    }
-    .right_content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .right_content .menu_itens ul, .right_content .menu_itens ul a {
-        display: flex;
-        flex-direction: row;
-    }
-    .right_content .menu_itens li {
-        float: right;
-        padding: 10px 12px;
-        margin: 12px 10px;
-        display: flex;
-        flex-direction: row;
-    }
-    .right_content .menu_itens li:nth-child(1) {
-        margin-right: 0;
-    }
-    .right_content .menu_itens li span{
-        display: none;
-    }
-
-    .logo img {
-        margin: 20px auto;
-    }
-
-    
-}
-
-
-
-
-  
-  
+/*# sourceMappingURL=styles.css.map */
