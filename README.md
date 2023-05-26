@@ -1,4 +1,5 @@
 # My Portfolio - Personal Web Page
-Personal website that contains work samples and other details (like my resume).
+Website that contains links to my works and projects.
 
-![Screenshot_MP_ Portfolio](https://user-images.githubusercontent.com/75372553/150177493-2f4b5f52-12e2-49a5-b1ef-101a6ad910cc.png)
+![imagem](https://github.com/marianarp27/marianarp27.github.io/assets/75372553/cc2319a6-cf81-45b5-8f3f-5d95a6106728)
+
