@@ -27,7 +27,7 @@ body {
 .mini_card{
     align-items: center;
     height: fit-content;
-    width: 350px;
+    width: 390px;
     padding: $card-padding;
     
     h2{
@@ -42,10 +42,10 @@ body {
         width: 50%;
     }
     @media (max-width: 780px) {
-        width: 70%;
+        width: 75%;
     }
-    @media (max-width: 480px) {
-        width: 90%;
+    @media (max-width: 508px) {
+        width: 80%;
     }
 }
 
